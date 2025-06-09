@@ -1,5 +1,6 @@
 import './App.css'
 import { TokenLaunchpad } from './components/TokenLaunchpad'
+
 // wallet adapter imports
 import { ConnectionProvider, WalletProvider } from '@solana/wallet-adapter-react';
 import {
@@ -11,14 +12,15 @@ import '@solana/wallet-adapter-react-ui/styles.css';
 
 function App() {
   return (
-    <div>
+    <div style={{width: "100vw"}}>
       <ConnectionProvider endpoint={"https://api.devnet.solana.com"}>
         <WalletProvider wallets={[]} autoConnect>
             <WalletModalProvider>
               <div style={{
                 display: 'flex',
-                justifyContent: 'space-between',
-                padding: 20
+                justifyContent: 'center',
+                gap : 6,
+                paddingTop : 20
               }}>
                 <WalletMultiButton />
                 <WalletDisconnectButton />
@@ -30,6 +32,5 @@ function App() {
     </div>
   )
 }
-
 
 export default App
